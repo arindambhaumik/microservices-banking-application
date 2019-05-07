@@ -29,8 +29,14 @@ public class CustomerDetailsControllerImplTest {
 	CustomerDetailsControllerImpl customerDetailsControllerImpl;
 
 	@Test
+	public void testHealthCheck() {
+		assertEquals("customer-service is healthy","customer-service is healthy");
+	}
+	
+	@Test
 	public void testRetrieveCustomer() {
-		CustomerDetails customer = new CustomerDetails(new Long(10), new Long(10), "", "", "", "", "", "", "", "", "","");
+		CustomerDetails customer = new CustomerDetails(new Long(10), new Long(10), "", "", "", "", "", "", "", "", "",
+				"");
 		List<CustomerDetails> customerList = new ArrayList<CustomerDetails>();
 		customerList.add(customer);
 

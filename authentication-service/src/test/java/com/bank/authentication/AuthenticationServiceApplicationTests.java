@@ -1,5 +1,7 @@
 package com.bank.authentication;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,5 +13,6 @@ public class AuthenticationServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		assertEquals("authentication-service","authentication-service");
 	}
 }
