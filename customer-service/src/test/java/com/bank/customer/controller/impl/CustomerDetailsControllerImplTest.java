@@ -28,11 +28,9 @@ public class CustomerDetailsControllerImplTest {
 	@InjectMocks
 	CustomerDetailsControllerImpl customerDetailsControllerImpl;
 
-	@Test
-	public void testHealthCheck() {
-		assertEquals("customer-service is healthy","customer-service is healthy");
-	}
-	
+	/**
+	 * Test case for customer happy path
+	 */
 	@Test
 	public void testRetrieveCustomer() {
 		CustomerDetails customer = new CustomerDetails(new Long(10), new Long(10), "", "", "", "", "", "", "", "", "",

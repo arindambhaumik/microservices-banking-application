@@ -13,6 +13,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import com.bank.account.accountservice.model.Account;
+import com.bank.account.accountservice.model.Transaction;
 import com.bank.account.accountservice.service.AccountDetailsService;
 
 /**
@@ -29,14 +30,31 @@ public class AccountDetailsControllerImplTest {
 	@InjectMocks
 	private AccountDetailsControllerImpl accountDetailsControllerImpl;
 
+	/**
+	 * test cases for Accounts happy path
+	 */
 	@Test
-	public void testAuthenticateUser() {
+	public void testRetrieveAccounts() {
 		Account account = new Account();
 		List<Account> accountList = new ArrayList<Account>();
 		accountList.add(account);
 
 		Mockito.when(accountDetailsService.retrieveAccounts(Mockito.anyLong())).thenReturn(accountList);
 		List<Account> accountListFromService = accountDetailsControllerImpl.retrieveAccounts(new Long(10));
+		assertEquals(accountListFromService.size(), 1);
+	}
+
+	/**
+	 * test cases for Transaction happy path
+	 */
+	@Test
+	public void testretrieveTransactions() {
+		Transaction account = new Transaction();
+		List<Transaction> accountList = new ArrayList<Transaction>();
+		accountList.add(account);
+
+		Mockito.when(accountDetailsService.retrieveTransactions(Mockito.anyInt())).thenReturn(accountList);
+		List<Transaction> accountListFromService = accountDetailsControllerImpl.retrieveTransactions(10);
 		assertEquals(accountListFromService.size(), 1);
 	}
 }

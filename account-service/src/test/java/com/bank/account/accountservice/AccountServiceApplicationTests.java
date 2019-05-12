@@ -1,5 +1,7 @@
 package com.bank.account.accountservice;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,5 +13,6 @@ public class AccountServiceApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		assertEquals("account-service", "account-service");
 	}
 }
